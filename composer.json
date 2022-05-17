@@ -1,0 +1,21 @@
+{
+    "name": "caifj/hyperf-dtm-client",
+    "description": "hyperf dtm client",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "HyperfDtmClient\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "caifj",
+            "email": "FangJieCai@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+	     "php":">=7.1.0"
+	}
+}
