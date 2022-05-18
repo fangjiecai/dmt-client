@@ -1,21 +1,67 @@
 {
-    "name": "caifj/hyperf-dtm-client",
-    "description": "hyperf dtm client",
+    "name": "dtm/hyperf-dtm-client",
     "type": "library",
     "license": "MIT",
+    "keywords": [
+        "php",
+        "dtm",
+        "dtm-client",
+        "hyperf"
+    ],
+    "description": "A PHP coroutine client for distributed transaction manager DTM. 分布式事务管理器 DTM 的 PHP 协程客户端",
     "autoload": {
         "psr-4": {
-            "HyperfDtmClient\\": "src/"
+            "DtmClient\\": "src/"
         }
     },
-    "authors": [
-        {
-            "name": "caifj",
-            "email": "FangJieCai@gmail.com"
+    "autoload-dev": {
+        "psr-4": {
+            "DtmClientTest\\": "tests"
         }
-    ],
-    "minimum-stability": "dev",
+    },
     "require": {
-	     "php":">=7.1.0"
-	}
+        "php": ">=7.3.0",
+        "ext-json": "*",
+        "hyperf/context": "^2.2",
+        "hyperf/guzzle": "^2.2",
+        "psr/http-server-middleware": "^1.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.0",
+        "mockery/mockery": "^1.0",
+        "phpstan/phpstan": "^1.0",
+        "phpunit/phpunit": ">=7.0"
+    },
+    "suggest": {
+        "hyperf/config": "^2.2",
+        "hyperf/db": "^2,2",
+        "hyperf/redis": "^2,2",
+        "hyperf/di": "^2.2",
+        "hyperf/grpc-client": "^2.2",
+        "hyperf/rpc-client": "^2.2",
+        "hyperf/json-rpc": "^2.2",
+        "ext-openssl": "Required to use HTTPS.",
+        "ext-pdo": "Required to use MySQL Client.",
+        "ext-pdo_mysql": "Required to use MySQL Client.",
+        "ext-redis": "Required to use Redis Client."
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "scripts": {
+        "test": "phpunit -c phpunit.xml --colors=always",
+        "analyse": "phpstan analyse --memory-limit 1024M -l 0 ./src",
+        "cs-fix": "php-cs-fixer fix $1"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        },
+        "hyperf": {
+            "config": "DtmClient\\ConfigProvider"
+        }
+    }
 }
