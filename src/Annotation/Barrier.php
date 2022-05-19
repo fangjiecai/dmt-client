@@ -19,7 +19,7 @@ class Barrier extends AbstractAnnotation
 {
     public  $dbType = 'mysql';
 
-    public function __construct(string $dbType = 'mysql')
-    {
-    }
+//    public function __construct(string $dbType = 'mysql')
+//    {
+//    }
 }
